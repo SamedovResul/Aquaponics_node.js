@@ -2,6 +2,8 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import nodemailer from 'nodemailer'
 import cors from 'cors'
+import dotenv from 'dotenv'
+dotenv.config()
 const app = express()
 
 app.use(cors())
@@ -25,8 +27,8 @@ app.post('/send', (req, res) => {
       port: 587,
       secure: false, // true for 465, false for other ports
       auth: {
-          user: 'semedovresul1997@gmail.com', // generated ethereal user
-          pass: 'semedov1418'  // generated ethereal password
+          user: process.env.EMAIL, // generated ethereal user
+          pass: process.env.PASS  // generated ethereal password
       },
       tls:{
         rejectUnauthorized:false
@@ -60,5 +62,5 @@ app.post('/send', (req, res) => {
   });
 
 
-  
-app.listen(5000, () =>console.log(`server start at ${5000}`))
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () =>console.log(`server start at ${PORT}`))
