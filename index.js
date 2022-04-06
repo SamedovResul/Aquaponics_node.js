@@ -49,13 +49,16 @@ app.post('/send', (req, res) => {
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             return console.log(error);
+            
         }
         console.log('Message sent: %s', info.messageId);   
         console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-
-        res.render('contact', {msg:'Email has been sent'});
+        res.status(404).json({error})
+        res.status(200).json({output})
     });
     res.send("hello")
   });
 
+
+  
 app.listen(5000, () =>console.log(`server start at ${5000}`))
