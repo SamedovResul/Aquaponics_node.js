@@ -9,9 +9,10 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => {
+app.get('/send', (req, res) => {
   res.send("hello")
 });
+
 
 
 app.post('/send', (req, res) => {
@@ -54,7 +55,7 @@ app.post('/send', (req, res) => {
 
         res.render('contact', {msg:'Email has been sent'});
     });
-    res.send(output)
+    res.send("hello")
   });
 
 app.listen(5000, () =>console.log(`server start at ${5000}`))
