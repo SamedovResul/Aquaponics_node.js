@@ -56,7 +56,7 @@ app.post('/send', (req, res) => {
         res.status(404).json({error})
         res.status(200).json({output})
     });
-    res.send("hello")
+    res.send(output)
   });
 
 
