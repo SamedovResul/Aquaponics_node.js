@@ -41,10 +41,15 @@ app.post('/send', (req, res) => {
         to:  'shahin@enteskedu.com', // list of receivers 'shahin@enteskedu.com'
         subject: 'email node.js', // Subject line
         text: 'Hello world?', // plain text body
-        html: `Name: ${output.name}, 
-        Surname:     ${output.surname}, 
-        Email:     ${output.email}, 
-        Phone:      ${output.phone}` // html body
+        html: `
+        <ul>
+          <li>${output.name}</li>
+          <li>${output.surname}</li>
+          <li>${output.email}</li>
+          <li>${output.phone}</li>
+          <li>${output.message}</li>
+        </ul>
+        ` // html body
     };
 
   //   // send mail with defined transport object
