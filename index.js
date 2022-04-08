@@ -43,11 +43,11 @@ app.post('/send', (req, res) => {
         text: 'Hello world?', // plain text body
         html: `
         <ul>
-          <li>${output.name}</li>
-          <li>${output.surname}</li>
-          <li>${output.email}</li>
-          <li>${output.phone}</li>
-          <li>${output.message}</li>
+          <li> name:${output.name}</li>
+          <li> surname:${output.surname}</li>
+          <li> email:${output.email}</li>
+          <li> phone:${output.phone}</li>
+          <li> message:${output.message}</li>
         </ul>
         ` // html body
     };
